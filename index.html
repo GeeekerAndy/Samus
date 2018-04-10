@@ -1,49 +1,57 @@
 <!DOCTYPE html>
 <html class="ui-page-login">
-	<head>
-	    <meta charset="utf-8">
-	    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	    <title>Login</title>
-	    <!--
-        	作者：geekerandy@outlook.com
-        	时间：2018-04-10
-        	描述：类库样式
-        -->
-	    <link href="css/mui.min.css" rel="stylesheet"  />
-	    <!--
-        	作者：geekerandy@outlook.com
-        	时间：2018-04-10
-        	描述：公共样式
-        -->
-	    <link href="css/style.css" rel="stylesheet"/>
-	    <!--
-        	作者：geekerandy@outlook.com
-        	时间：2018-04-10
-        	描述：私有样式
-        -->
-	    <style>
-	    	body {
-	    		background-color: #199ED8;
-	    	}
-	    	textarea {
-	    		color: white;
-	    	}
-	    	.textbutton {
-	    		background-color: #199ED8;
-	    		border-color: #199ED8;
-	    		color: white;
-	    	}
-	    </style>
-	    <script type="text/javascript">
-	    	
-	   		document.addEventListener('plusready', function(){
-	   			//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"
-	   			
-	   		});
-	   		
-	    </script>
-	</head>
-	<body>
-		<button id="newUser" class="mui-pull-right textbutton">新用户</button>			
-	</body>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>Login</title>
+	<link href="css/mui.min.css" rel="stylesheet" />
+	<link href="css/style.css" rel="stylesheet" />
+	<style>
+		.login {
+			padding-top: 70px;
+		}
+
+		.padding-20px {
+			padding: 20px;
+		}
+
+		.center {
+			margin: auto;
+			width: 80%;
+		}
+	</style>
+	<script type="text/javascript">
+		document.addEventListener('plusready', function () {
+			//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"
+
+		});
+	</script>
+</head>
+
+<body>
+	<div>
+		<p id="new-user " style="text-align: right; color: white;padding: 5px; ">新用户</p>
+		<div class="login ">
+			<p style="text-align: center; ">
+				<img src="img/Heart with Pulse_50px.png " width="80px " height="80px " />
+			</p>
+			<form id='login-form' class="mui-input-group mui-active center ">
+				<div class="mui-input-row ">
+					<label>账号</label>
+					<input id='account' type="text " class="mui-input-clear mui-input " placeholder="请输入账号 ">
+				</div>
+				<div class="mui-input-row ">
+					<label>密码</label>
+					<input id='password' type="password " class="mui-input-clear mui-input " placeholder="请输入密码 ">
+				</div>
+			</form>
+			<p class="padding-20px " style="text-align: center; ">
+				<img src="img/Right_52px.png " width="60px " height="60px " />
+			</p>
+			<p style="text-align: center; color: white; ">忘记密码</p>
+		</div>
+	</div>
+</body>
+
 </html>
