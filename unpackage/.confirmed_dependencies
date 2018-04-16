@@ -1,0 +1,43 @@
+{
+  "login.html": {
+    "resources": [
+      "/js/login.js",
+      "/images/heart_with_pulse_50px.png"
+    ],
+    "refer": [
+      "html/register.html"
+    ]
+  },
+  "modules/login/login.html": {
+    "refer": [
+      "modules/register/register.html"
+    ],
+    "resources": []
+  },
+  "modules/register/register.html": {
+    "refer": [
+      "modules/choosehoobies/chooseHoobies.html"
+    ],
+    "resources": []
+  },
+  "modules/choosehoobies/chooseHoobies.html": {
+    "refer": [
+      "modules/home/home.html"
+    ],
+    "resources": []
+  },
+  "modules/home/home.html": {
+    "href": "modules/home/home.html",
+    "resources": [
+      "css/mui.min.css",
+      "js/mui.min.js",
+      "css/bootstrap.min.css",
+      "css/style.css",
+      "js/util.js",
+      "fonts/iconfont.ttf",
+      "fonts/iconfont-nav.ttf"
+    ],
+    "refer": [],
+    "priority": 0
+  }
+}
