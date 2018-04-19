@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>Login</title>
+	<!--标准mui.css-->
+	<link href="../../css/mui.min.css" rel="stylesheet" />
+	<!--图标css-->
+	<link href="../../css/iconfont.css" rel="stylesheet" />
+</head>
+
+<body>
+	<div class="mui-content">
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">Samus</h1>
+		</header>
+		<nav class="mui-bar mui-bar-tab" id="nav">
+			<a id="tab_chat" class="mui-tab-item mui-active" href="chat/chat.html">
+				<span class="mui-icon iconfont icon-chat"></span>
+				<span class="mui-tab-label">消息</span>
+			</a>
+			<a id="tab_contacts" class="mui-tab-item" href="contacts/contacts.html">
+				<span class="mui-icon iconfont icon-people_list_light"></span>
+				<span class="mui-tab-label">通讯录</span>
+			</a>
+			<a id="tab_match" class="mui-tab-item" href="match/match.html">
+				<span class="mui-icon iconfont icon-heart"></span>
+				<span class="mui-tab-label">匹配</span>
+			</a>
+			<a id="tab_me" class="mui-tab-item" href="me/me.html">
+				<span class="mui-icon iconfont icon-home1"></span>
+				<span class="mui-tab-label">个人主页</span>
+			</a>
+			<a id="tab_timeline" class="mui-tab-item" href="timeline/timeline.html">
+				<span class="mui-icon iconfont icon-iconfontdongtai"></span>
+				<span class="mui-tab-label">动态</span>
+			</a>
+		</nav>
+	</div>
+	<script src="../../js/mui.min.js"></script>
+	<script type="text/javascript" charset="utf-8">  
+		mui.init({
+			subpages: [//先加载首页  
+				{
+					url: 'chat/chat.html',
+					id: 'tab_chat',
+					styles: {
+						top: '45px',
+						bottom: '50px',
+						backButtonAutoControl: 'quit'
+					}
+				}
+
+			],
+			preloadPages: [//缓存其他页面  
+				{
+					url: 'contacts/contacts.html',
+					id: 'tab_contacts',
+					styles: {
+						top: '45px',
+						bottom: '50px',
+						backButtonAutoControl: 'quit'
+					}
+				},
+				{
+					url: 'match/match.html',
+					id: 'tab_match',
+					styles: {
+						top: '45px',
+						bottom: '50px',
+						backButtonAutoControl: 'quit'
+					}
+				}
+				,
+				{
+					url: 'me/me.html',
+					id: 'tab_me',
+					styles: {
+						top: '45px',
+						bottom: '50px',
+						backButtonAutoControl: 'quit'
+					}
+				}
+				,
+				{
+					url: 'timeline/timeline.html',
+					id: 'tab_timeline',
+					styles: {
+						top: '45px',
+						bottom: '50px',
+						backButtonAutoControl: 'quit'
+					}
+				}
+				
+			]
+
+		});
+
+		mui.plusReady(function(){   
+                // 获取所有Webview窗口  
+                // var winAll=plus.webview.all();//获取所有窗体  
+                //console.log(JSON.stringify(winAll))   
+                var tab_chat, tab_contacts, tab_match, tab_me, tab_timeline;
+                mui("#nav").on("tap","#tab_chat",function(){//点击触发   
+                    tab_chat=plus.webview.getWebviewById("tab_chat");  
+					plus.webview.show(tab_chat);
+					plus.webview.hide(tab_contacts);
+					plus.webview.hide(tab_match);
+					plus.webview.hide(tab_me);
+					plus.webview.hide(tab_timeline); 
+                })  
+                mui("#nav").on("tap","#tab_contacts",function(){//点击触发  
+					tab_contacts = plus.webview.getWebviewById("tab_contacts");
+					plus.webview.show(tab_contacts);                      
+                })  
+                mui("#nav").on("tap","#tab_match",function(){//点击触发  
+                    tab_match = plus.webview.getWebviewById("tab_match");
+					plus.webview.show(tab_match);                      
+				})  
+				mui("#nav").on("tap","#tab_me",function(){//点击触发  
+                    tab_me = plus.webview.getWebviewById("tab_me");
+					plus.webview.show(tab_me);                     
+				})  
+				mui("#nav").on("tap","#tab_timeline",function(){//点击触发  
+                    tab_timeline = plus.webview.getWebviewById("tab_timeline");
+					plus.webview.show(tab_timeline);
+                })  
+            });  
+	</script>
+</body>
+
+
+</html>

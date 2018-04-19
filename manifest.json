@@ -1,4 +1,4 @@
-﻿{
+{
     "@platforms": [
         "android",
         "iPhone",
@@ -14,7 +14,7 @@
     "icons": {
         "72": "icon.png"
     },
-    "launch_path": "modules/home/home.html", /*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
+    "launch_path": "index.html", /*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
     "developer": {
         "name": "", /*开发者名称*/
         "email": "", /*开发者邮箱地址*/
@@ -44,161 +44,6 @@
         }
     },
     "plus": {
-        "launchwebview": {
-            "bottom": "0px",
-            "background": "#fff",
-            "subNViews": [
-                {
-                    "id": "tabBar",
-                    "styles": {
-                        "bottom": "0px",
-                        "left": "0",
-                        "height": "50px",
-                        "width": "100%",
-                        "backgroundColor": "#fff"
-                    },
-                    "tags": [
-                        {
-                            "tag": "font",
-                            "id": "chat",
-                            "text": "\ue66a",
-                            "position": {
-                                "top": "4px",
-                                "left": "0",
-                                "width": "25%",
-                                "height": "24px"
-                            },
-                            "textStyles": {
-                                "fontSrc": "_www/fonts/iconfont.ttf",
-                                "align": "center",
-                                "size": "24px"
-                            }
-                        },
-                        {
-                            "tag": "font",
-                            "id": "indexText",
-                            "text": "聊天",
-                            "position": {
-                                "top": "23px",
-                                "left": "0",
-                                "width": "25%",
-                                "height": "24px"
-                            },
-                            "textStyles": {
-                                "align": "center",
-                                "size": "10px"
-                            }
-                        },
-                        {
-                            "tag": "font",
-                            "id": "contacts",
-                            "text": "\ue7da",
-                            "position": {
-                                "top": "4px",
-                                "left": "20%",
-                                "width": "25%",
-                                "height": "24px"
-                            },
-                            "textStyles": {
-                                "fontSrc": "_www/fonts/iconfont.ttf",
-                                "align": "center",
-                                "size": "24px"
-                            }
-                        },
-                        {
-                            "tag": "font",
-                            "id": "newsText",
-                            "text": "通讯录",
-                            "position": {
-                                "top": "23px",
-                                "left": "20%",
-                                "width": "25%",
-                                "height": "24px"
-                            },
-                            "textStyles": {
-                                "align": "center",
-                                "size": "10px"
-                            }
-                        },
-                        {
-                            "tag": "font",
-                            "id": "home",
-                            "text": "\ue631",
-                            "position": {
-                                "top": "4px",
-                                "left": "55%",
-                                "width": "25%",
-                                "height": "24px"
-                            },
-                            "textStyles": {
-                                "fontSrc": "_www/fonts/iconfont.ttf",
-                                "align": "center",
-                                "size": "24px"
-                            }
-                        },
-                        {
-                            "tag": "font",
-                            "id": "contactText",
-                            "text": "主页",
-                            "position": {
-                                "top": "24px",
-                                "left": "55%",
-                                "width": "25%",
-                                "height": "24px"
-                            },
-                            "textStyles": {
-                                "align": "center",
-                                "size": "10px"
-                            }
-                        },
-                        {
-                            "tag": "font",
-                            "id": "newwindowIcon",
-                            "text": "\ue62d",
-                            "position": {
-                                "top": "4px",
-                                "left": "75%",
-                                "width": "25%",
-                                "height": "24px"
-                            },
-                            "textStyles": {
-                                "fontSrc": "_www/fonts/iconfont.ttf",
-                                "align": "center",
-                                "size": "24px"
-                            }
-                        },
-                        {
-                            "tag": "font",
-                            "id": "new",
-                            "text": "动态",
-                            "position": {
-                                "top": "24px",
-                                "left": "75%",
-                                "width": "25%",
-                                "height": "24px"
-                            },
-                            "textStyles": {
-                                "align": "center",
-                                "size": "10px"
-                            }
-                        },
-                        {
-                            "tag": "rect",
-                            "id": "tabBorder",
-                            "position": {
-                                "top": "0",
-                                "left": "0",
-                                "width": "100%",
-                                "height": "1px"
-                            },
-                            "rectStyles": {
-                                "color": "#ccc"
-                            }
-                        }
-                    ]
-                }
-            ]
-        },
         "splashscreen": {
             "autoclose": true, /*是否自动关闭程序启动界面，true表示应用加载应用入口页面后自动关闭；false则需调plus.navigator.closeSplashscreen()关闭*/
             "waiting": true/*是否在程序启动界面显示等待雪花，true表示显示，false表示不显示。*/
@@ -324,100 +169,170 @@
     },
     "fullscreen": true,
     "dependencies": {
-	  "pages": {
-	    "login.html": {
-	      "resources": [
-	        "/js/login.js",
-	        "/images/heart_with_pulse_50px.png"
-	      ],
-	      "refer": [
-	        "html/register.html"
-	      ],
-	      "priority": 0
-	    },
-	    "modules/login/login.html": {
-	      "resources": [],
-	      "refer": [
-	        "modules/register/register.html"
-	      ],
-	      "priority": 0
-	    },
-	    "modules/register/register.html": {
-	      "resources": [],
-	      "refer": [
-	        "modules/choosehoobies/chooseHoobies.html"
-	      ],
-	      "priority": 0
-	    },
-	    "modules/choosehoobies/chooseHoobies.html": {
-	      "resources": [],
-	      "refer": [
-	        "modules/home/home.html"
-	      ],
-	      "priority": 0
-	    },
-	    "modules/home/home.html": {
-	      "href": "modules/home/home.html",
-	      "resources": [
-	        "css/mui.min.css",
-	        "js/mui.min.js",
-	        "css/bootstrap.min.css",
-	        "css/style.css",
-	        "js/util.js",
-	        "fonts/mui.ttf",
-	        "fonts/iconfont-nav.ttf",
-	        "fonts/iconfont.ttf"
-	      ],
-	      "priority": 0,
-	      "refer": []
-	    }
-	  },
-	  "idle": {
-	    "resources": [
-	      "modules/home/speech_bubble_blue_50px.png",
-	      "modules/home/speech_bubble_50px.png",
-	      "modules/home/novel_50px.png",
-	      "images/less_than_50px.png",
-	      "images/left_50px.png",
-	      "modules/login/login.js",
-	      "modules/home/home_blue_50px.png",
-	      "css/bootstrap-reboot.css",
-	      "js/bootstrap.bundle.min.js.map",
-	      "css/bootstrap.css.map",
-	      "css/bootstrap-reboot.css.map",
-	      "css/bootstrap.css",
-	      "modules/home/user_menu_50px.png",
-	      "css/iconfont.css",
-	      "modules/register/register.js",
-	      "js/bootstrap.min.js",
-	      "js/mui.js",
-	      "images/long_arrow_left_26px.png",
-	      "modules/home/home.js",
-	      "js/bootstrap.js.map",
-	      "js/bootstrap.bundle.js",
-	      "README.md",
-	      "css/bootstrap-grid.min.css.map",
-	      "css/bootstrap-grid.min.css",
-	      "js/bootstrap.min.js.map",
-	      "modules/home/home_50px.png",
-	      "modules/choosehoobies/chooosehoobies.js",
-	      "css/bootstrap-reboot.min.css",
-	      "images/heart_with_pulse_50px.png",
-	      "js/bootstrap.bundle.js.map",
-	      "css/bootstrap-reboot.min.css.map",
-	      "js/bootstrap.bundle.min.js",
-	      "css/bootstrap-grid.css",
-	      "css/mui.css",
-	      "modules/home/novel_blue_50px.png",
-	      "index.html",
-	      "css/bootstrap.min.css.map",
-	      "modules/home/user_menu_blue_50px.png",
-	      "js/bootstrap.js",
-	      "modules/login/login.css",
-	      "css/bootstrap-grid.css.map",
-	      "modules/choosehoobies/local.css",
-	      "images/right_52px.png"
-	    ]
-	  }
+		"pages": {
+			"login.html": {
+				"resources": [
+					"/js/login.js",
+					"/images/heart_with_pulse_50px.png"
+				],
+				"refer": [
+					"html/register.html"
+				],
+				"priority": 0
+			},
+			"modules/login/login.html": {
+				"resources": [
+					"modules/login/login.js",
+					"css/mui.min.css",
+					"css/style.css",
+					"images/heart_with_pulse_50px.png",
+					"images/right_52px.png"
+				],
+				"refer": [
+					"modules/register/register.html"
+				],
+				"priority": 0
+			},
+			"modules/register/register.html": {
+				"resources": [
+					"modules/register/register.js",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"css/style.css",
+					"images/less_than_50px.png",
+					"images/heart_with_pulse_50px.png",
+					"images/right_52px.png",
+					"/modules/choosehoobies/chooseHoobies.html"
+				],
+				"refer": [
+					"modules/choosehoobies/chooseHoobies.html"
+				],
+				"priority": 0
+			},
+			"modules/choosehoobies/chooseHoobies.html": {
+				"resources": [
+					"modules/choosehoobies/chooosehoobies.js",
+					"css/mui.min.css",
+					"css/bootstrap.min.css",
+					"css/style.css",
+					"modules/choosehoobies/local.css",
+					"images/right_52px.png"
+				],
+				"refer": [
+					"modules/home/home.html",
+					"modules/main/main.html",
+					"modules/register/register.html"
+				],
+				"priority": 0
+			},
+			"modules/home/home.html": {
+				"href": "modules/home/home.html",
+				"resources": [
+					"css/mui.min.css",
+					"js/mui.min.js",
+					"css/bootstrap.min.css",
+					"css/style.css",
+					"js/util.js",
+					"fonts/mui.ttf",
+					"fonts/iconfont-nav.ttf",
+					"fonts/iconfont.ttf"
+				],
+				"priority": 0,
+				"refer": []
+			},
+			"modules/main/main.html": {
+				"resources": [
+					"modules/main/chat/chat.html",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"modules/main/main.js"
+				],
+				"refer": [
+					"modules/main/timeline/timeline.html",
+					"modules/main/match/match.html",
+					"modules/main/contacts/contacts.html",
+					"modules/main/me/me.html",
+					"modules/choosehoobies/chooseHoobies.html",
+					"index.html"
+				],
+				"priority": 0
+			},
+			"modules/main/contacts/contacts.html": {
+				"href": "modules/main/contacts/contacts.html",
+				"priority": 0,
+				"resources": [],
+				"refer": []
+			},
+			"modules/main/match/match.html": {
+				"href": "modules/main/match/match.html",
+				"priority": 1,
+				"resources": [],
+				"refer": []
+			},
+			"modules/main/timeline/timeline.html": {
+				"href": "modules/main/timeline/timeline.html",
+				"priority": 2,
+				"resources": [],
+				"refer": []
+			},
+			"modules/main/chat/chat.html": {
+				"href": "modules/main/chat/chat.html",
+				"priority": 3,
+				"resources": [],
+				"refer": []
+			},
+			"modules/main/me/me.html": {
+				"href": "modules/main/me/me.html",
+				"priority": 4,
+				"resources": [],
+				"refer": []
+			},
+			"index.html": {
+				"resources": [],
+				"refer": [
+					"modules/main/main.html",
+					"modules/login/login.html"
+				],
+				"priority": 0
+			}
+		},
+		"idle": {
+			"resources": [
+				"modules/main/home_blue_50px.png",
+				"images/left_50px.png",
+				"css/bootstrap-reboot.css",
+				"js/bootstrap.bundle.min.js.map",
+				"modules/main/user_menu_50px.png",
+				"css/bootstrap.css.map",
+				"css/bootstrap-reboot.css.map",
+				"css/bootstrap.css",
+				"css/iconfont.css",
+				"js/bootstrap.min.js",
+				"images/long_arrow_left_26px.png",
+				"js/mui.js",
+				"js/bootstrap.js.map",
+				"modules/main/novel_50px.png",
+				"js/bootstrap.bundle.js",
+				"README.md",
+				"css/bootstrap-grid.min.css.map",
+				"css/bootstrap-grid.min.css",
+				"js/bootstrap.min.js.map",
+				"modules/main/user_menu_blue_50px.png",
+				"css/bootstrap-reboot.min.css",
+				"js/bootstrap.bundle.js.map",
+				"css/bootstrap-reboot.min.css.map",
+				"js/bootstrap.bundle.min.js",
+				"css/bootstrap-grid.css",
+				"css/mui.css",
+				"modules/main/speech_bubble_50px.png",
+				"css/bootstrap.min.css.map",
+				"modules/main/home_50px.png",
+				"modules/main/novel_blue_50px.png",
+				"js/bootstrap.js",
+				"modules/main/speech_bubble_blue_50px.png",
+				"modules/login/login.css",
+				"css/bootstrap-grid.css.map"
+			]
+		}
 	}
 }

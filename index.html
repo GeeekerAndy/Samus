@@ -3,15 +3,38 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>Hello MUI</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>启动</title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
 	</head>
 
 	<body>
-		<!--程序入口文件：modules/login/login.html-->
-		<!--此处仅进行网页知识的测试实践学习-->
+		<script type="text/javascript" charset="utf-8">
+			mui.plusReady(function() {
+				/* 检测当前版本是否首次使用，首次使用转Welcome，非首次使用转Home
+				 * 目标页面加载完成时关闭启动页
+				 * 未连接服务器
+				 */
+				
+				var userAccount = plus.storage.getItem("userAccount");
+				var userPassword = plus.storage.getItem("userPassword");
+				plus.storage.setItem("userAccount",null);
+				//temp account.
+				plus.storage.setItem("userAccount", "Andy");
+				var targetUrl;
+				if (userAccount == null) {
+					targetUrl = "modules/login/login.html";
+				} else {
+					targetUrl = "modules/main/main.html";
+				}
+				window.open(targetUrl);
+			});
+		</script>		
 
 	</body>
-	
 
 </html>
