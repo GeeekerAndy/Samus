@@ -1,0 +1,172 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-size: 200%;
+}
+
+body {
+  overflow: hidden;
+}
+
+.demo {
+  position: absolute;
+  /*left: 90%;
+    
+    top: 50%;
+    width: 30.6rem;
+    height: 54rem;
+    margin-left: -15.3rem;
+    margin-top: -27rem;*/
+  left: 5%;
+  right: 5%;
+  top: 15%;
+  bottom: 15%;
+  margin: auto;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 16px 40px 0 rgba(0, 0, 0, 0.19);
+}
+
+.demo__content {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.demo__card-cont {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.demo__card {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  padding-bottom: 5px;
+}
+
+.demo__card.reset {
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  -webkit-transform: translateX(0) !important;
+  transform: translateX(0) !important;
+}
+
+.demo__card.reset .demo__card__choice {
+  transition: opacity 0.3s;
+  opacity: 0 !important;
+}
+
+.demo__card.inactive {
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+.demo__card.to-left {
+  -webkit-transform: translateX(-50rem) translateY(30rem) rotate(-90deg) !important;
+  transform: translateX(-50rem) translateY(30rem) rotate(-90deg) !important;
+}
+
+.demo__card.to-right {
+  -webkit-transform: translateX(50rem) translateY(30rem) rotate(90deg) !important;
+  transform: translateX(50rem) translateY(30rem) rotate(90deg) !important;
+}
+
+.demo__card.below {
+  z-index: 1;
+}
+
+.demo__card__top {
+  height: 20.5rem;
+  padding-top: 4rem;
+}
+
+.demo__card__img {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  border: 0.5rem solid #ffffff;
+  background-image: url("//s3-us-west-2.amazonaws.com/s.cdpn.io/142996/profile/profile-512_5.jpg");
+  background-size: cover;
+}
+
+.demo__card__choice {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.demo__card__choice:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 2rem;
+  height: 2rem;
+  margin-left: -1rem;
+  color: #fff;
+  box-shadow: -2rem -3rem #fff, 2rem -3rem #fff;
+  border-radius: 50%;
+}
+
+.demo__card__choice:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 4rem;
+  height: 1.5rem;
+  margin-left: -2rem;
+  border: 0.6rem solid #fff;
+  border-bottom: none;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+}
+
+.demo__card__choice.m--reject {
+  background: #FF945A;
+}
+
+.demo__card__choice.m--like {
+  background: #B1DA96;
+}
+
+.demo__card__choice.m--like:after {
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
+}
+
+.demo__card__drag {
+  z-index: 5;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.demo__tip {
+  text-align: center;
+  font-size: 2.2rem;
+}
