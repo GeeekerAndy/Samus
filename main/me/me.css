@@ -1,0 +1,8 @@
+.wallpaper {
+	position: static;
+	height: 180px;
+	width: 180px;
+	background: lightblue;
+	left: 10px;
+	top:100px;
+}

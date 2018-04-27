@@ -1,156 +1,158 @@
 {
-  "login.html": {
-    "resources": [
-      "/js/login.js",
-      "/images/heart_with_pulse_50px.png"
-    ],
-    "refer": [
-      "html/register.html"
-    ]
-  },
-  "modules/login/login.html": {
-    "refer": [
-      "modules/register/register.html"
-    ],
-    "resources": [
-      "modules/login/login.js",
-      "css/mui.min.css",
-      "css/style.css",
-      "images/heart_with_pulse_50px.png",
-      "images/right_52px.png"
-    ]
-  },
-  "modules/register/register.html": {
-    "refer": [
-      "modules/choosehoobies/chooseHoobies.html",
-      "/modules/choosehoobies/chooseHoobies.html"
-    ],
-    "resources": [
-      "modules/register/register.js",
-      "js/mui.min.js",
-      "css/mui.min.css",
-      "css/style.css",
-      "images/less_than_50px.png",
-      "images/heart_with_pulse_50px.png",
-      "images/right_52px.png",
-      "/modules/choosehoobies/chooseHoobies.html"
-    ]
-  },
-  "modules/choosehoobies/chooseHoobies.html": {
-    "refer": [
-      "modules/home/home.html",
-      "modules/main/main.html",
-      "modules/register/register.html"
-    ],
-    "resources": [
-      "modules/choosehoobies/chooosehoobies.js",
-      "css/mui.min.css",
-      "css/bootstrap.min.css",
-      "css/style.css",
-      "modules/choosehoobies/local.css",
-      "images/right_52px.png"
-    ]
-  },
-  "modules/home/home.html": {
-    "href": "modules/home/home.html",
-    "resources": [
-      "css/mui.min.css",
-      "js/mui.min.js",
-      "css/bootstrap.min.css",
-      "css/style.css",
-      "js/util.js",
-      "fonts/iconfont.ttf",
-      "fonts/iconfont-nav.ttf"
-    ],
-    "refer": [],
-    "priority": 0
-  },
-  "modules/main/main.html": {
-    "resources": [
-      "modules/main/chat/chat.html",
-      "js/mui.min.js",
-      "css/mui.min.css",
-      "modules/main/main.js"
-    ],
-    "refer": [
-      "modules/main/timeline/timeline.html",
-      "modules/main/match/match.html",
-      "modules/main/contacts/contacts.html",
-      "modules/main/me/me.html",
-      "modules/main/chat/chat.html",
-      "modules/choosehoobies/chooseHoobies.html",
-      "index.html"
-    ]
-  },
-  "modules/main/contacts/contacts.html": {
-    "href": "modules/main/contacts/contacts.html",
-    "priority": 0,
-    "resources": [],
-    "refer": []
-  },
-  "modules/main/match/match.html": {
-    "href": "modules/main/match/match.html",
-    "priority": 0,
-    "resources": [],
-    "refer": []
-  },
-  "modules/main/timeline/timeline.html": {
-    "href": "modules/main/timeline/timeline.html",
-    "priority": 0,
-    "resources": [],
-    "refer": []
-  },
-  "modules/main/chat/chat.html": {
-    "href": "modules/main/chat/chat.html",
-    "priority": 0,
-    "resources": [],
-    "refer": []
-  },
-  "modules/main/me/me.html": {
-    "href": "modules/main/me/me.html",
-    "priority": 0,
-    "resources": [],
-    "refer": []
-  },
-  "index.html": {
-    "refer": [
-      "modules/main/main.html",
-      "modules/login/login.html",
-      "main/main.html",
-      "login/login.html"
-    ],
-    "resources": []
-  },
-  "register/register.html": {
-    "refer": [
-      "hooby/chooseHoobies.html"
-    ],
-    "resources": []
-  },
-  "login/login.html": {
-    "refer": [
-      "register/register.html"
-    ],
-    "resources": []
-  },
-  "hooby/chooseHoobies.html": {
-    "refer": [
-      "main/main.html"
-    ],
-    "resources": []
-  },
-  "main/main.html": {
-    "refer": [
-      "hooby/chooseHoobies.html",
-      "main/match/match.html",
-      "main/timeline/timeline.html",
-      "main/contacts/contacts.html",
-      "main/me/me.html",
-      "index.html",
-      "main/chat/chat.html"
-    ],
-    "resources": [
-      "main/chat/chat.html"
-    ]
-  }
+	"login.html": {
+		"resources": [
+			"/js/login.js",
+			"/images/heart_with_pulse_50px.png"
+		],
+		"refer": [
+			"html/register.html"
+		]
+	},
+	"modules/login/login.html": {
+		"refer": [
+			"modules/register/register.html"
+		],
+		"resources": [
+			"modules/login/login.js",
+			"css/mui.min.css",
+			"css/style.css",
+			"images/heart_with_pulse_50px.png",
+			"images/right_52px.png"
+		]
+	},
+	"modules/register/register.html": {
+		"refer": [
+			"modules/choosehoobies/chooseHoobies.html",
+			"/modules/choosehoobies/chooseHoobies.html"
+		],
+		"resources": [
+			"modules/register/register.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"css/style.css",
+			"images/less_than_50px.png",
+			"images/heart_with_pulse_50px.png",
+			"images/right_52px.png",
+			"/modules/choosehoobies/chooseHoobies.html"
+		]
+	},
+	"modules/choosehoobies/chooseHoobies.html": {
+		"refer": [
+			"modules/home/home.html",
+			"modules/main/main.html",
+			"modules/register/register.html"
+		],
+		"resources": [
+			"modules/choosehoobies/chooosehoobies.js",
+			"css/mui.min.css",
+			"css/bootstrap.min.css",
+			"css/style.css",
+			"modules/choosehoobies/local.css",
+			"images/right_52px.png"
+		]
+	},
+	"modules/home/home.html": {
+		"href": "modules/home/home.html",
+		"resources": [
+			"css/mui.min.css",
+			"js/mui.min.js",
+			"css/bootstrap.min.css",
+			"css/style.css",
+			"js/util.js",
+			"fonts/iconfont.ttf",
+			"fonts/iconfont-nav.ttf"
+		],
+		"refer": [],
+		"priority": 0
+	},
+	"modules/main/main.html": {
+		"resources": [
+			"modules/main/chat/chat.html",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"modules/main/main.js"
+		],
+		"refer": [
+			"modules/main/timeline/timeline.html",
+			"modules/main/match/match.html",
+			"modules/main/contacts/contacts.html",
+			"modules/main/me/me.html",
+			"modules/main/chat/chat.html",
+			"modules/choosehoobies/chooseHoobies.html",
+			"index.html"
+		]
+	},
+	"modules/main/contacts/contacts.html": {
+		"href": "modules/main/contacts/contacts.html",
+		"priority": 0,
+		"resources": [],
+		"refer": []
+	},
+	"modules/main/match/match.html": {
+		"href": "modules/main/match/match.html",
+		"priority": 0,
+		"resources": [],
+		"refer": []
+	},
+	"modules/main/timeline/timeline.html": {
+		"href": "modules/main/timeline/timeline.html",
+		"priority": 0,
+		"resources": [],
+		"refer": []
+	},
+	"modules/main/chat/chat.html": {
+		"href": "modules/main/chat/chat.html",
+		"priority": 0,
+		"resources": [],
+		"refer": []
+	},
+	"modules/main/me/me.html": {
+		"href": "modules/main/me/me.html",
+		"priority": 0,
+		"resources": [],
+		"refer": []
+	},
+	"index.html": {
+		"refer": [
+			"modules/main/main.html",
+			"modules/login/login.html",
+			"main/main.html",
+			"login/login.html"
+		],
+		"resources": []
+	},
+	"register/register.html": {
+		"refer": [
+			"hooby/chooseHoobies.html",
+			"main/main.html"
+		],
+		"resources": []
+	},
+	"login/login.html": {
+		"refer": [
+			"register/register.html"
+		],
+		"resources": []
+	},
+	"hooby/chooseHoobies.html": {
+		"refer": [
+			"main/main.html"
+		],
+		"resources": []
+	},
+	"main/main.html": {
+		"refer": [
+			"hooby/chooseHoobies.html",
+			"main/match/match.html",
+			"main/timeline/timeline.html",
+			"main/contacts/contacts.html",
+			"main/me/me.html",
+			"index.html",
+			"main/chat/chat.html",
+			"register/register.html"
+		],
+		"resources": [
+			"main/chat/chat.html"
+		]
+	}
 }

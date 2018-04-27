@@ -300,7 +300,8 @@
 			"register/register.html": {
 				"resources": [],
 				"refer": [
-					"hooby/chooseHoobies.html"
+					"hooby/chooseHoobies.html",
+					"main/main.html"
 				],
 				"priority": 0
 			},
@@ -328,7 +329,8 @@
 					"main/timeline/timeline.html",
 					"main/contacts/contacts.html",
 					"main/me/me.html",
-					"index.html"
+					"index.html",
+					"register/register.html"
 				],
 				"priority": 0
 			}
