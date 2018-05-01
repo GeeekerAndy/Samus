@@ -124,9 +124,12 @@
 	"register/register.html": {
 		"refer": [
 			"hooby/chooseHoobies.html",
-			"main/main.html"
+			"main/main.html",
+			"/main/main.html"
 		],
-		"resources": []
+		"resources": [
+			"/main/main.html"
+		]
 	},
 	"login/login.html": {
 		"refer": [
@@ -154,5 +157,12 @@
 		"resources": [
 			"main/chat/chat.html"
 		]
+	},
+	"main/me/me.html": {
+		"refer": [
+			"main/me/info.html",
+			"main/me/music.html"
+		],
+		"resources": []
 	}
 }

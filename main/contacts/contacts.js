@@ -34,7 +34,7 @@ function pulldownRefresh() {
 	setTimeout(function () {
 		var table = document.body.querySelector('.mui-table-view');
 		var cells = document.body.querySelectorAll('.mui-table-view-cell');
-		var avatar = '"avatar.gif"';
+		var avatar = '"../../images/avatar.jpg"';
 		var userName = "云天明";
 		var group = "同学";
 		var userIntro = "这是我的昵称"

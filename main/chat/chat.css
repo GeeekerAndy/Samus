@@ -21,6 +21,8 @@ html,body {
 }
 .oa-contact-avatar img {
     border-radius: 50%;
+    height: 60px;
+    width: 60px;
 }
 .oa-contact-content {
     width: 100%;

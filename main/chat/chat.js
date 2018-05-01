@@ -33,7 +33,7 @@ function pulldownRefresh() {
 	setTimeout(function() {
 		var table = document.body.querySelector('.mui-table-view');
 		var cells = document.body.querySelectorAll('.mui-table-view-cell');
-		var avatar = '"avatar.gif"';
+		var avatar = '"../../images/avatar.jpg"';
 		var userName = "云天明";
 		var isRead = "未读";
 		var userIntro = "这是我的昵称"
@@ -41,7 +41,7 @@ function pulldownRefresh() {
 	    <div class="mui-slider-cell">\
 	        <div class="oa-contact-cell mui-table">\
 	            <div class="oa-contact-avatar mui-table-cell">\
-	                <img src=' + avatar + ' />\
+	                <img src=' + avatar + '/>\
 	            </div>\
 	            <div class="oa-contact-content mui-table-cell">\
 	                <div class="mui-clearfix">\

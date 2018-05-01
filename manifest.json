@@ -298,7 +298,9 @@
 				"priority": 0
 			},
 			"register/register.html": {
-				"resources": [],
+				"resources": [
+					"/main/main.html"
+				],
 				"refer": [
 					"hooby/chooseHoobies.html",
 					"main/main.html"
@@ -331,6 +333,14 @@
 					"main/me/me.html",
 					"index.html",
 					"register/register.html"
+				],
+				"priority": 0
+			},
+			"main/me/me.html": {
+				"resources": [],
+				"refer": [
+					"main/me/info.html",
+					"main/me/music.html"
 				],
 				"priority": 0
 			}
