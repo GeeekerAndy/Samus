@@ -310,7 +310,11 @@
 			"login/login.html": {
 				"resources": [],
 				"refer": [
-					"register/register.html"
+					"register/register.html",
+					"main/main.html",
+					"login/register.html",
+					"index.html",
+					"login/forgetpwd.html"
 				],
 				"priority": 0
 			},
@@ -323,7 +327,8 @@
 			},
 			"main/main.html": {
 				"resources": [
-					"main/chat/chat.html"
+					"main/chat/chat.html",
+					"main/message/message.html"
 				],
 				"refer": [
 					"hooby/chooseHoobies.html",
@@ -341,6 +346,20 @@
 				"refer": [
 					"main/me/info.html",
 					"main/me/music.html"
+				],
+				"priority": 0
+			},
+			"login/register.html": {
+				"resources": [],
+				"refer": [
+					"main/main.html"
+				],
+				"priority": 0
+			},
+			"main/message/message.html": {
+				"resources": [],
+				"refer": [
+					"main/message/chat.html"
 				],
 				"priority": 0
 			}

@@ -13,12 +13,14 @@
 
 	<body>
 		<div class="mui-content">
-			<p id="new-user" style="text-align: right; color: white;padding: 15px;" onclick="jumpToRegister()">新用户</p>
-			<div style="margin-top: 120px">
+			<a class="mui-action-back mui-pull-left">
+				<img src="../images/less_than_50px.png" style="width: 30px; height: 30px; margin: 10px" />
+			</a>
+			<div style="padding-top: 170px;">
 				<p style="text-align: center;">
 					<img src="../images/heart_with_pulse_50px.png" width="80px" height="80px" />
 				</p>
-				<form id='login-form' class="mui-input-group mui-active" style="text-align: center">
+				<form id='register-form' class="mui-input-group mui-active" style="text-align: center">
 					<div class="mui-input-row">
 						<label>学校</label>
 						<select>
@@ -30,21 +32,20 @@
 					</div>
 					<div class="mui-input-row">
 						<label>账号</label>
-						<input id='login-account' type="text" class="mui-input-clear mui-input" placeholder="请输入账号">
+						<input id='register-account' type="text" class="mui-input-clear mui-input" placeholder="请输入教务系统账号">
 					</div>
 					<div class="mui-input-row">
 						<label>密码</label>
-						<input id='login-password' type="password" class="mui-input-clear mui-input" placeholder="请输入密码">
+						<input id='register-password' type="password" class="mui-input-clear mui-input" placeholder="请输入教务系统密码">
 					</div>
 				</form>
 				<p style="text-align: center; padding: 20px">
-					<img src="../images/right_52px.png" width="60px" height="60px" onclick="jumpToMainPage()"/>
+					<img src="../images/right_52px.png" width="60px" height="60px" onclick="jumpToMainPage()" />
 				</p>
-				<p style="text-align: center; color: white; " onclick="jumpToForgetPwd()">忘记密码</p>
 			</div>
 		</div>
 	</body>
-	<script type="text/javascript" src="login.js" defer></script>
+	<script type="text/javascript" src="register.js"></script>
 	<script src="../pubjs/mui.min.js"></script>
 
 </html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="../pubcss/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar-nav mui-bar">
+			<a class="mui-action-back mui-icon mui-icon-arrowleft mui-pull-left"></a>
+			<h1 class="mui-title">忘记密码</h1>
+		</header>
+		<div style="padding-top: 170px;">
+			<p style="text-align: center;">
+				<img src="../images/heart_with_pulse_50px.png" width="80px" height="80px" />
+			</p>
+			<form id='register-form' class="mui-input-group mui-active" style="text-align: center">
+				<div class="mui-input-row">
+					<label>学校</label>
+					<select>
+						<option value="" disabled selected>请选择学校</option>
+						<option value="10422">山东大学</option>
+						<option value="10001">北京大学</option>
+						<option value="10003">清华大学</option>
+					</select>
+				</div>
+				<div class="mui-input-row">
+					<label>账号</label>
+					<input id='register-account' type="text" class="mui-input-clear mui-input" placeholder="请输入教务系统账号">
+				</div>
+				<div class="mui-input-row">
+					<label>密码</label>
+					<input id='register-password' type="password" class="mui-input-clear mui-input" placeholder="请输入教务系统密码">
+				</div>
+			</form>
+			<p style="text-align: center; padding: 20px">
+				<button class="mui-btn-red">重置为初始教务密码</button>
+			</p>
+		</div>
+	</body>
+	<script src="../pubjs/mui.min.js"></script>
+
+</html>

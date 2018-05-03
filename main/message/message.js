@@ -16,11 +16,12 @@ mui.init({
 /**
  * H5+初始化
  */
-if(window.plus){
+if(window.plus) {
 	plusReady();
-}else{
-	document.addEventListener('plusready',plusReady,false);
+} else {
+	document.addEventListener('plusready', plusReady, false);
 }
+
 function plusReady() {
 	plus.key.addEventListener('backbutton', function() {
 		plus.runtime.quit();
@@ -31,13 +32,23 @@ function plusReady() {
  */
 function pulldownRefresh() {
 	setTimeout(function() {
-		var table = document.body.querySelector('.mui-table-view');
-		var cells = document.body.querySelectorAll('.mui-table-view-cell');
-		var avatar = '"../../images/avatar.jpg"';
-		var userName = "云天明";
-		var isRead = "未读";
-		var userIntro = "这是我的昵称"
-		var oneChatElement = '\
+		for(var index = 0; index < 3; index++) {
+			addOneMessage("210032130421", "云天明" + index);
+		}
+	}, 1000);
+}
+
+/*
+ * 添加一个消息, 
+ */
+function addOneMessage(id, userName) {
+	var table = document.body.querySelector('.mui-table-view');
+	var cells = document.body.querySelectorAll('.mui-table-view-cell');
+	var avatar = '"../../images/avatar.jpg"';
+	//		var userName = "云天明";
+	var isRead = "未读";
+	var userIntro = "这是我的昵称"
+	var oneChatElement = '\
 	    <div class="mui-slider-cell">\
 	        <div class="oa-contact-cell mui-table">\
 	            <div class="oa-contact-avatar mui-table-cell">\
@@ -52,14 +63,15 @@ function pulldownRefresh() {
 	            </div>\
 	        </div>\
 	    </div >';
-		for(var i = cells.length, len = i + 3; i < len; i++) {
-			var li = document.createElement('li');
-			li.className = 'mui-table-view-cell';
-			li.innerHTML = oneChatElement;
-			//下拉刷新，未读插到最前面；
-			table.insertBefore(li, table.firstChild);
-		}
-		mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
-		mui.toast('刷新成功');
-	}, 1000);
+	var li = document.createElement('li');
+	li.id = id;
+	li.className = 'mui-table-view-cell';
+	li.innerHTML = oneChatElement;
+	li.addEventListener('tap', function() {
+		plus.webview.open('chat.html?targetId=' + li.id, 'new', {}, 'slide-in-right', 200);
+	});
+	//下拉刷新，未读插到最前面；
+	table.insertBefore(li, table.firstChild);
+	mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+	mui.toast('刷新成功');
 }

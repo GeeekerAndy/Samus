@@ -7,10 +7,11 @@ if(window.plus) {
 	document.addEventListener('plusready', plusReady, false);
 }
 
-plus.key.addEventListener('backbutton', function() {
-	plus.runtime.quit();
-}, false);
-
+function plusReady() {
+	plus.key.addEventListener('backbutton', function() {
+		plus.runtime.quit();
+	}, false);
+}
 function editInfo() {
 	plus.webview.open('info.html', 'new', {}, 'slide-in-right', 200);
 }

@@ -133,7 +133,11 @@
 	},
 	"login/login.html": {
 		"refer": [
-			"register/register.html"
+			"register/register.html",
+			"main/main.html",
+			"login/register.html",
+			"index.html",
+			"login/forgetpwd.html"
 		],
 		"resources": []
 	},
@@ -152,10 +156,12 @@
 			"main/me/me.html",
 			"index.html",
 			"main/chat/chat.html",
-			"register/register.html"
+			"register/register.html",
+			"main/message/message.html"
 		],
 		"resources": [
-			"main/chat/chat.html"
+			"main/chat/chat.html",
+			"main/message/message.html"
 		]
 	},
 	"main/me/me.html": {
@@ -164,5 +170,15 @@
 			"main/me/music.html"
 		],
 		"resources": []
+	},
+	"login/register.html": {
+		"refer": [
+			"main/main.html"
+		]
+	},
+	"main/message/message.html": {
+		"refer": [
+			"main/message/chat.html"
+		]
 	}
 }

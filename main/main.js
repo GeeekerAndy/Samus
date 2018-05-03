@@ -1,7 +1,7 @@
 mui.init({
 	subpages: [ //先加载首页  
 		{
-			url: 'chat/chat.html',
+			url: 'message/message.html',
 			id: 'tab_chat',
 			styles: {
 				top: '45px',
