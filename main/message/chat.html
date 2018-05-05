@@ -517,16 +517,13 @@
 							"info": info,
 							"userid": plus.device.uuid
 						}, function(data) {
-							//							var testData = '['+
-							//							'{ "code":100000,"text":"这是一条消息" },'+
-							//							'{ "code":100000,"text":"这是另一条消息" }]';
 							var testData = '{"code":100000,"text":"哇哦，你是做这个行业的？"}';
 							obj = JSON.parse(testData);
 							console.log(JSON.stringify(data));
 							record.push({
 								sender: 'zs',
 								type: 'text',
-								content: obj.text
+								content: data.text
 							});
 							bindMsgList();
 						});
