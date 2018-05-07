@@ -57,7 +57,7 @@ function addOneMessage(id, userName) {
 	            <div class="oa-contact-content mui-table-cell">\
 	                <div class="mui-clearfix">\
 	                    <h4 class="oa-contact-name">' + userName + '</h4>\
-	                    <span class="oa-contact-position mui-h6">' + isRead + '</span>\
+	                    <span id="readStatus" class="oa-contact-position mui-h6">' + isRead + '</span>\
 	                </div>\
 	                <p class="oa-contact-email mui-h6">' + userIntro + '</p>\
 	            </div>\
@@ -68,10 +68,11 @@ function addOneMessage(id, userName) {
 	li.className = 'mui-table-view-cell';
 	li.innerHTML = oneChatElement;
 	li.addEventListener('tap', function() {
-		plus.webview.open('chat.html?targetId=' + li.id, 'new', {}, 'slide-in-right', 200);
+		$('#readStatus').hide();
+		plus.webview.open('chat.html?chatId=' + li.id, 'new', {}, 'slide-in-right', 200);
 	});
 	//下拉刷新，未读插到最前面；
 	table.insertBefore(li, table.firstChild);
-	mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+	mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //rfresh completed
 	mui.toast('刷新成功');
 }

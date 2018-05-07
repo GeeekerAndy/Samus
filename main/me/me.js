@@ -12,6 +12,7 @@ function plusReady() {
 		plus.runtime.quit();
 	}, false);
 }
+
 function editInfo() {
 	plus.webview.open('info.html', 'new', {}, 'slide-in-right', 200);
 }
@@ -54,4 +55,10 @@ function editFood() {
 
 function editGame() {
 
+}
+
+function quitApplication() {
+	plus.storage.removeItem("userAccount");
+	plus.storage.removeItem("userPassword");
+	plus.runtime.restart();
 }

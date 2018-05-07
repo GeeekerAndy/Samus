@@ -1,14 +1,14 @@
 /**
  * H5+初始化
  */
-if (window.plus) {
+if(window.plus) {
 	plusReady();
 } else {
 	document.addEventListener('plusready', plusReady, false);
 }
 
 function plusReady() {
-	plus.key.addEventListener('backbutton', function () {
+	plus.key.addEventListener('backbutton', function() {
 		plus.runtime.quit();
 	}, false);
 }
@@ -21,9 +21,9 @@ function jumpToMainPage() {
 	var registerAccount = $("#register-account");
 	var registerPwd = $("#register-password");
 	var serverInfo = getServerInfo();
-	var targetUrl = "http://" + serverInfo.serverIp + serverInfo.registerInterface;
+	var targetUrl = serverInfo.serverIp + serverInfo.registerInterface;
 	var sendData = {
-		"schoolName": registerSchool.text(),
+		"schoolId5": registerSchool.val(),
 		"xuehao": registerAccount.val(),
 		"gender": registerGender.text(),
 		"password": registerPwd.val()
@@ -35,15 +35,34 @@ function jumpToMainPage() {
 		contentType: 'application/json',
 		cache: false,
 		dataType: 'json',
-		success: function (data) {
-			if(data["code"] = 0) {
+		success: function(data) {
+			if(data["code"] == "0") {
 				mui.toast("注册成功");
+				plus.storage.setItem("userAccount", sendData.schoolId5 + sendData.xuehao);
+				plus.storage.setItem("userPassword", sendData.password);
+				mui.openWindow("../main/main.html");
+			} else {
+				if(false) {
+
+				} else if(data["code"] == "1012") {
+					mui.toast("学校为空");
+				} else if(data["code"] == "1013") {
+					mui.toast("学号为空");
+				} else if(data["code"] == "1014") {
+					mui.toast("学号密码为空");
+				} else if(data["code"] == "1008") {
+					mui.toast("密码为空");
+				} else if(data["code"] == "1017") {
+					mui.toast("账号已注册");
+				} else {
+					mui.toast("注册失败");
+				}
 			}
 			console.log(JSON.stringify(data));
-			
-			mui.openWindow("../main/main.html");
+
 		},
-		error: function (XMLHttpRequest,status, error) {
+		error: function(XMLHttpRequest, status, error) {
+			mui.toast("无法连接服务器");
 			console.log(XMLHttpRequest);
 			console.log(status);
 			console.log(error);

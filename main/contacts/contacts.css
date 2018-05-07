@@ -7,20 +7,22 @@ html,body {
     font-size: 15px;
 }
  .oa-contact-cell.mui-table .mui-table-cell {
-    padding: 8px 0;
+ 	padding: 5px 10px;
     vertical-align: middle;
 }
 
 .oa-contact-cell {
     position: relative;
-    margin: -12px 0;
+    vertical-align: middle;
 }
 
 .oa-contact-avatar {
     width: 75px;
+    vertical-align: middle;
 }
 .oa-contact-avatar img {
     border-radius: 50%;
+    vertical-align: middle;
 }
 .oa-contact-content {
     width: 100%;

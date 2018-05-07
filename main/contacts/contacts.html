@@ -4,7 +4,8 @@
 	<head>
 		<meta charset="utf-8">
 		<title>chat</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+		<meta name="viewport" content="width=device-width,
+			initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<link href="../../pubcss/mui.min.css" rel="stylesheet">
@@ -14,14 +15,13 @@
 	<body>
 		<div id="pullrefresh" class="mui-scroll-wrapper">
 			<div class="mui-scroll">
-				<ul id="chat-list" class="mui-table-view mui-table-view-striped mui-table-view-condensed mui-table-view-chevron">
-					<!--动态添加并显示联系人-->
-				</ul>
+				<!--动态添加并按照分组显示联系人-->
+				<ul class="contact-group mui-table-view mui-table-view-chevron"></ul>
 			</div>
 		</div>
-		<script src="../../pubjs/mui.min.js"></script>
-		<script src="contacts.js"></script>
 
 	</body>
+	<script src="../../pubjs/mui.min.js"></script>
+	<script src="contacts.js"></script>
 
 </html>

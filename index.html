@@ -10,27 +10,67 @@
 		<script type="text/javascript" charset="utf-8">
 			mui.init();
 		</script>
+		<style>
+			html,
+			body {
+				height: 100%;
+			}
+			
+			html {
+				display: table;
+				margin: auto;
+			}
+			
+			body {
+				display: table-cell;
+				vertical-align: middle;
+			}
+		</style>
 	</head>
 
 	<body>
+		<p>连接中...(╯°Д°）╯︵ /(.□ . \)</p>
+
 		<script type="text/javascript" charset="utf-8">
 			mui.plusReady(function() {
 				/* 检测是否成功登录过，下次直接登录
 				 * 或每次从本地存储获取账号密码模拟登录（没有网络无法使用该应用）
-				 */				
+				 */
 				var userAccount = plus.storage.getItem("userAccount");
 				var userPassword = plus.storage.getItem("userPassword");
-				plus.storage.setItem("userAccount",null);
-				//临时账户，用于开发主界面，跳过登录界面.
-//				plus.storage.setItem("userAccount", "Andy");
-				var targetUrl;
-				if (userAccount == null) {
-					targetUrl = "login/login.html";
+				if(userAccount == null) {
+					window.open("login/login.html");
 				} else {
-					targetUrl = "main/main.html";
+					var sendData = {
+						"userId": userAccount,
+						"password": userPassword
+					};
+					var serverInfo = getServerInfo();
+					var serverUrl = serverInfo.serverIp + serverInfo.loginInterface;
+					$.ajax({
+						url: serverUrl,
+						data: JSON.stringify(sendData),
+						type: 'post',
+						contentType: 'application/json',
+						cache: false,
+						dataType: 'json',
+						success: function(data) {
+							if(data["code"] == 0) {
+								// mui.openWindow("main/main.html");
+								window.open("main/main.html");
+							} else {
+								mui.toast("登录失败");
+							}
+						},
+						error: function() {
+							mui.toast("登录失败");
+						}
+					});
 				}
-				window.open(targetUrl);
 			});
-		</script>		
+		</script>
 	</body>
+	<script src="pubjs/config.js"></script>
+	<script src="pubjs/jquery.min.js"></script>
+
 </html>
