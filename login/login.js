@@ -87,3 +87,7 @@ function jumpToRegister() {
 function jumpToForgetPwd() {
 	plus.webview.open('forgetpwd.html', 'new', {}, 'slide-in-right', 200);
 }
+
+function storePersonalInfo() {
+	
+}

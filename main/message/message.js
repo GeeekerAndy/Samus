@@ -12,6 +12,7 @@ mui.init({
 	}
 	//本地消息保存策略
 });
+mui.init({});
 
 /**
  * H5+初始化
@@ -69,7 +70,7 @@ function addOneMessage(id, userName) {
 	li.innerHTML = oneChatElement;
 	li.addEventListener('tap', function() {
 		$('#readStatus').hide();
-		plus.webview.open('chat.html?chatId=' + li.id, 'new', {}, 'slide-in-right', 200);
+		plus.webview.open('chat.html?chatId=' + li.id + '&chatName=' + encodeURI(userName), 'new', {}, 'slide-in-right', 200);
 	});
 	//下拉刷新，未读插到最前面；
 	table.insertBefore(li, table.firstChild);

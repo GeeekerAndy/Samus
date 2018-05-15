@@ -4,18 +4,20 @@
 	<head>
 		<meta charset="utf-8">
 		<title>me</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="viewport" content="width=device-width,
+			initial-scale=1,maximum-scale=1, user-scalable=no">
 		<link rel="stylesheet" href="../../pubcss/mui.min.css" />
 		<link rel="stylesheet" href="me.css" />
+		<script src="../../pubjs/mui.min.js"></script>
 	</head>
 
 	<body>
-		<div class="mui-content">
+		<div id="me-pullrefresh" class="mui-content">
 			<div class="wallpaper">
 				<div style="text-align: center;">
-					<img class="avatar" src="../../images/avatar.jpg" />
-					<h4>云天明</h4>
-					<h5>Stay Hungry. Stay Foolish.</h5>
+					<img id="me-avatar" class="avatar" src="../../images/avatar.jpg" />
+					<h4 id="me-user-name">云天明</h4>
+					<h5 id="me-intro">Stay Hungry. Stay Foolish.</h5>
 					<div class="mui-card" style="margin-bottom: 20px; margin-top: 10px;">
 						<ul class="mui-table-view">
 							<li class="mui-table-view-cell" onclick="editInfo()">
@@ -24,39 +26,42 @@
 							<li class="mui-table-view-cell" onclick="editMusic()">
 								<a>音乐</a>
 							</li>
-							<li class="mui-table-view-cell">
-								<a>旅游</a>
+							<li class="mui-table-view-cell" onclick="editTravel()">
+								<a>旅行</a>
 							</li>
-							<li class="mui-table-view-cell">
+							<li class="mui-table-view-cell" onclick="editMovie()">
 								<a>电影</a>
 							</li>
-							<li class="mui-table-view-cell">
+							<li class="mui-table-view-cell" onclick="editCartoon()">
 								<a>动漫</a>
 							</li>
-							<li class="mui-table-view-cell">
+							<li class="mui-table-view-cell" onclick="editReading()">
 								<a>读书</a>
 							</li>
-							<li class="mui-table-view-cell">
+							<li class="mui-table-view-cell" onclick="editArt()">
 								<a>艺术</a>
 							</li>
-							<li class="mui-table-view-cell">
+							<li class="mui-table-view-cell" onclick="editSport()">
 								<a>运动</a>
 							</li>
-							<li class="mui-table-view-cell">
+							<li class="mui-table-view-cell" onclick="editIdol()">
 								<a>偶像</a>
 							</li>
-							<li class="mui-table-view-cell">
+							<li class="mui-table-view-cell" onclick="editFood()">
 								<a>美食</a>
 							</li>
-							<li class="mui-table-view-cell">
+							<li class="mui-table-view-cell" onclick="editGame()">
 								<a>游戏</a>
 							</li>
 						</ul>
 					</div>
-					<button class="mui-btn-red" style="margin-bottom: 20px;" onclick="quitApplication()">退出账号</button>
+					<button class="mui-btn-red" style="margin-bottom: 20px;"
+						onclick="quitApplication()">退出账号</button>
 				</div>
 			</div>
+		</div>
 	</body>
 	<script type="text/javascript" src="me.js"></script>
-
+	<script src="../../pubjs/jquery.min.js"></script>
+	<script src="../../pubjs/config.js"></script>
 </html>

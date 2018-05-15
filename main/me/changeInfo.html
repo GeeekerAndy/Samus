@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title></title>
 		<link href="../../pubcss/mui.min.css" rel="stylesheet" />
+		<script src="../../pubjs/jquery.min.js"></script>
 	</head>
 
 	<body>
@@ -14,30 +15,51 @@
 			<h1 class="mui-title">修改个人信息</h1>
 		</header>
 		<div class="mui-content" style="margin-top: 20px; background-color: #f7f7f7;">
+			<p style="text-align: center;">
+				<img id="change-info-avatar" src="../../images/avatar.jpg" onclick="changeAvatar()" style="border-radius: 50%; height: 100px;	width: 100px; margin-top: 10px;	box-shadow: 2px 2px 5px 0px rgba(200, 200, 200, 1);" />
+			</p>
 			<form class="mui-input-group">
 				<div class="mui-input-row">
 					<label>账号</label>
-					<input type="text" readonly value="2341">
+					<input id="change-info-account" type="text" readonly value="2341">
 				</div>
 				<div class="mui-input-row">
 					<label>密码</label>
-					<input type="password" placeholder="更改密码">
+					<input id="change-info-password" type="password" placeholder="更改密码">
 				</div>
 				<div class="mui-input-row">
 					<label>昵称</label>
-					<input type="text" class="mui-input-clear" placeholder="更改昵称">
+					<input id="change-info-nickname" type="text" class="mui-input-clear" placeholder="更改昵称">
+				</div>
+				<div class="mui-input-row">
+					<label>年龄</label>
+					<input id="change-info-age" type="number" class="mui-input-clear" placeholder="更改年龄">
+				</div>
+				<div class="mui-input-row">
+					<label>性别</label>
+					<select id="change-info-gender">
+						<option value="0">女生</option>
+						<option value="1">男生</option>
+					</select>
+				</div>
+				<div class="mui-input-row">
+					<label>个性签名</label>
+					<input id="change-info-intro" type="text" class="mui-input-clear" placeholder="个性签名">
+				</div>
+				<div class="mui-input-row">
+					<label>电话</label>
+					<input id="change-info-tel" type="number" class="mui-input-clear" placeholder="更改电话">
 				</div>
 
-				<div class="mui-input-row mui-plus-visible">
-					<label>Input</label>
-					<input type="text" class="mui-input-speech mui-input-clear" placeholder="语音输入">
-				</div>
-				<div class="mui-button-row">
-					<button type="button" class="mui-btn mui-btn-primary" onclick="return false;">确认</button>&nbsp;&nbsp;
-					<button type="button" class="mui-btn mui-btn-danger mui-action-back">取消</button>
-				</div>
 			</form>
+			<div class="mui-button-row" style="padding-top: 15px; padding-bottom: 15px;">
+				<button type="button" class="mui-btn mui-btn-primary" onclick="confirm()">确认</button>&nbsp;&nbsp;
+				<button type="button" class="mui-btn mui-btn-danger mui-action-back">取消</button>
+			</div>
 		</div>
+		<script src="../../pubjs/mui.min.js"></script>
+		<script src="changeInfo.js"></script>
+		<script src="../../pubjs/config.js"></script>
 	</body>
 
 </html>

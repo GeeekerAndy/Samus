@@ -12,7 +12,7 @@
 		<div class="mui-content" style="background-color: #f7f7f7; text-align: center;">
 			<header class="mui-bar mui-bar-nav">
 				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-				<h1 class="mui-title">音乐</h1>
+				<h1 class="mui-title">电影</h1>
 			</header>
 			<div class="mui-card" style="margin-bottom: 20px; margin-top: 50px; text-align: center;">
 				<ul id="ul-hobby-list" class="mui-table-view">
@@ -35,8 +35,8 @@
 			swipeBack: true //启用右滑关闭功能
 		});
 		mui.plusReady(function() {
-			if(plus.storage.getItem("music") != null) {
-				var hobbyArr = plus.storage.getItem("music").split(";");
+			if(plus.storage.getItem("movie") != null) {
+				var hobbyArr = plus.storage.getItem("movie").split(";");
 				console.log("本地存储的兴趣：" + hobbyArr + "长度：" + hobbyArr.length);
 				for(var i = 0; i < hobbyArr.length; i++) {
 					addOneHobbyToUI(hobbyArr[i]);
@@ -46,7 +46,7 @@
 			document.getElementById("add-hobby").addEventListener('tap', function(e) {
 				e.detail.gesture.preventDefault(); //修复iOS 8.x平台存在的bug，使用plus.nativeUI.prompt会造成输入法闪一下又没了
 				var btnArray = ['取消', '添加'];
-				mui.prompt('添加你的爱好吧~', '乐器、风格、语言', '音乐', btnArray, function(e) {
+				mui.prompt('添加你的爱好吧~', '爱情、动作、惊悚、复联', '电影', btnArray, function(e) {
 					if(e.index == 1) {
 						//添加兴趣
 						addOneHobbyToUI(e.value);
@@ -58,9 +58,8 @@
 			});
 			document.getElementById('submit').addEventListener('tap', function() {
 				var sendData = {
-					"music": getHobbyListFromUI()
+					"movie": getHobbyListFromUI()
 				};
-				console.log("muisic.html sendData:" + JSON.stringify(sendData));
 
 				$.ajax({
 					type: "post",
@@ -142,7 +141,6 @@
 							plus.storage.setItem("schoolid5", userInfo.data.schoolId5);
 							if(userInfo.data.age != null) {
 								plus.storage.setItem("age", userInfo.data.age.toString());
-								console.log("me.js updatePersonInfo() userInfo.data.age: " + plus.storage.getItem("age"));
 							}
 							plus.storage.setItem("gender", userInfo.data.gender);
 							plus.storage.setItem("intro", userInfo.data.intro);
@@ -162,7 +160,6 @@
 						} else {
 							mui.toast("服务器已更新，但更新本地信息失败，请刷新");
 						}
-						mui('#me-pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
 					},
 					error: function(XMLHttpRequest, textStatus, errorThrown) {
 						mui.toast("无法连接到服务器");

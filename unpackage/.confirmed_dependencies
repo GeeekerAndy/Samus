@@ -167,18 +167,30 @@
 	"main/me/me.html": {
 		"refer": [
 			"main/me/info.html",
-			"main/me/music.html"
+			"main/me/music.html",
+			"main/me/changeInfo.html",
+			"main/me/travel.html",
+			"main/me/movie.html",
+			"main/me/cartoon.html",
+			"main/me/reading.html",
+			"main/me/art.html",
+			"main/me/sport.html",
+			"main/me/idol.html",
+			"main/me/food.html",
+			"main/me/game.html"
 		],
 		"resources": []
 	},
 	"login/register.html": {
 		"refer": [
 			"main/main.html"
-		]
+		],
+		"resources": []
 	},
 	"main/message/message.html": {
 		"refer": [
 			"main/message/chat.html"
-		]
+		],
+		"resources": []
 	}
 }
