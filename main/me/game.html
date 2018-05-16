@@ -60,6 +60,7 @@
 				var sendData = {
 					"game": getHobbyListFromUI()
 				};
+				console.log("更改游戏爱好数据为：" + JSON.stringify(sendData));
 				$.ajax({
 					type: "post",
 					url: getServerInfo().serverIp + getServerInfo().updateHobby,

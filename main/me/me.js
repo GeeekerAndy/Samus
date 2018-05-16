@@ -65,9 +65,9 @@ function updatePersonalInfo() {
 				plus.storage.setItem("schoolid5", userInfo.data.schoolId5);
 				if(userInfo.data.age != null) {
 					plus.storage.setItem("age", userInfo.data.age.toString());
-					console.log("me.js updatePersonInfo() userInfo.data.age: " + plus.storage.getItem("age"));
+//					console.log("me.js updatePersonInfo() userInfo.data.age: " + plus.storage.getItem("age"));
 				}
-				plus.storage.setItem("gender", userInfo.data.gender);
+				plus.storage.setItem("gender", userInfo.data.gender.toString());
 				plus.storage.setItem("intro", userInfo.data.intro);
 				plus.storage.setItem("phone", userInfo.data.phone);
 				plus.storage.setItem("art", userInfo.data.art);

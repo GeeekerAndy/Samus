@@ -55,7 +55,7 @@ mui.init({
 mui.plusReady(function() {
 	var tab_chat, tab_contacts, tab_match, tab_me, tab_timeline;
 	//点击触发切换动作
-	mui("#nav").on("tap", "#tab_chat", function() {  
+	mui("#nav").on("tap", "#tab_chat", function() {
 		tab_chat = plus.webview.getWebviewById("tab_chat");
 		plus.webview.show(tab_chat);
 		plus.webview.hide(tab_contacts);
@@ -63,16 +63,16 @@ mui.plusReady(function() {
 		plus.webview.hide(tab_me);
 		plus.webview.hide(tab_timeline);
 	})
-	mui("#nav").on("tap", "#tab_contacts", function() { 
+	mui("#nav").on("tap", "#tab_contacts", function() {
 		tab_contacts = plus.webview.getWebviewById("tab_contacts");
 		plus.webview.hide(tab_chat);
 		plus.webview.hide(tab_match);
 		plus.webview.hide(tab_me);
 		plus.webview.hide(tab_timeline);
 		plus.webview.show(tab_contacts);
-		
+
 	})
-	mui("#nav").on("tap", "#tab_match", function() { 
+	mui("#nav").on("tap", "#tab_match", function() {
 		tab_match = plus.webview.getWebviewById("tab_match");
 		plus.webview.hide(tab_chat);
 		plus.webview.hide(tab_contacts);
@@ -80,7 +80,7 @@ mui.plusReady(function() {
 		plus.webview.hide(tab_timeline);
 		plus.webview.show(tab_match);
 	})
-	mui("#nav").on("tap", "#tab_me", function() { 
+	mui("#nav").on("tap", "#tab_me", function() {
 		tab_me = plus.webview.getWebviewById("tab_me");
 		plus.webview.hide(tab_chat);
 		plus.webview.hide(tab_match);
@@ -88,7 +88,7 @@ mui.plusReady(function() {
 		plus.webview.hide(tab_timeline);
 		plus.webview.show(tab_me);
 	})
-	mui("#nav").on("tap", "#tab_timeline", function() { 
+	mui("#nav").on("tap", "#tab_timeline", function() {
 		tab_timeline = plus.webview.getWebviewById("tab_timeline");
 		plus.webview.hide(tab_chat);
 		plus.webview.hide(tab_match);

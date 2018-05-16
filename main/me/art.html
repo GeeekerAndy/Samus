@@ -60,7 +60,7 @@
 				var sendData = {
 					"art": getHobbyListFromUI()
 				};
-
+				console.log("更改艺术爱好数据为：" + JSON.stringify(sendData));
 				$.ajax({
 					type: "post",
 					url: getServerInfo().serverIp + getServerInfo().updateHobby,
@@ -141,6 +141,7 @@
 							plus.storage.setItem("schoolid5", userInfo.data.schoolId5);
 							if(userInfo.data.age != null) {
 								plus.storage.setItem("age", userInfo.data.age.toString());
+								console.log("me.js updatePersonInfo() userInfo.data.age: " + plus.storage.getItem("age"));
 							}
 							plus.storage.setItem("gender", userInfo.data.gender);
 							plus.storage.setItem("intro", userInfo.data.intro);

@@ -4,7 +4,7 @@ var changeInfoPassword = $("#change-info-password");
 var changeInfoNickname = $("#change-info-nickname");
 var changeInfoAvatar = $("#change-info-avatar");
 var changeInfoAge = $("#change-info-age");
-var changeInfoGender = $("#change-info-gender option:selected");
+var changeInfoGender = $("#change-info-gender");
 var changeInfoIntro = $("#change-info-intro");
 var changeInfoTel = $("#change-info-tel");
 
@@ -24,7 +24,7 @@ function plusReady() {
 	var userPassword = plus.storage.getItem("userPassword");
 	var nickname = plus.storage.getItem("nickname");
 	var userAge = plus.storage.getItem("age");
-	console.log("changeInfo plusReady() userAge: " + userAge);
+//	console.log("changeInfo plusReady() userAge: " + userAge);
 	var gender = plus.storage.getItem("gender");
 	var intro = plus.storage.getItem("intro");
 	var phone = plus.storage.getItem("phone");
@@ -34,9 +34,9 @@ function plusReady() {
 	changeInfoNickname.val(nickname);
 	changeInfoAge.val(userAge);
 	if(gender == "0") {
-		changeInfoGender.text("女生");
+		document.getElementById("girl").selected = true;
 	} else {
-		changeInfoGender.text("男生");
+		document.getElementById("boy").selected = true;
 	}
 	changeInfoIntro.val(intro);
 	changeInfoTel.val(phone);
@@ -89,13 +89,13 @@ function confirm() {
 	var avatarBase64;
 	toDataUrl(changeInfoAvatar.attr("src"), function(myBase64) {
 		avatarBase64 = myBase64;
-		console.log("获取的mybase64" + myBase64); // myBase64 is the base64 string
-
+//		console.log("获取的mybase64" + myBase64); // myBase64 is the base64 string
+		console.log("性别为：" + document.getElementById("change-info-gender").value);
 		var userInfo = {
 			"password": changeInfoPassword.val(),
 			"nickname": changeInfoNickname.val(),
 			"age": changeInfoAge.val(),
-			"gender": changeInfoGender.val(),
+			"gender": parseInt(changeInfoGender.val()),
 			"intro": changeInfoIntro.val(),
 			"phone": changeInfoTel.val(),
 			"avatar": avatarBase64
@@ -169,15 +169,15 @@ function updatePersonalInfo() {
 		cache: false,
 		dataType: 'json',
 		success: function(userInfo) {
-			console.log(JSON.stringify(userInfo));
+//			console.log(JSON.stringify(userInfo));
 			if(userInfo["code"] == "0") {
 				mui.toast('更新本地信息成功');
 				//本地保存个人信息
 				plus.storage.setItem("nickname", userInfo.data.nickname);
 				plus.storage.setItem("schoolid5", userInfo.data.schoolId5);
 				plus.storage.setItem("age", userInfo.data.age.toString());
-				console.log("changeInfo.js updatePersonalInfo userInfo.data.age:" + userInfo.data.age);
-				plus.storage.setItem("gender", userInfo.data.gender);
+//				console.log("changeInfo.js updatePersonalInfo userInfo.data.age:" + userInfo.data.age);
+				plus.storage.setItem("gender", userInfo.data.gender.toString());
 				plus.storage.setItem("intro", userInfo.data.intro);
 				plus.storage.setItem("phone", userInfo.data.phone);
 				plus.storage.setItem("art", userInfo.data.art);
@@ -191,7 +191,7 @@ function updatePersonalInfo() {
 				plus.storage.setItem("sport", userInfo.data.sport);
 				plus.storage.setItem("travel", userInfo.data.travel);
 				plus.storage.setItem("avatar", userInfo.data.avatar);
-				console.log("获取信息，存入本地：" + userInfo.data.avatar);
+//				console.log("获取信息，存入本地：" + userInfo.data.avatar);
 			} else {
 				mui.toast("更新本地信息失败，请刷新重试");
 			}

@@ -372,6 +372,13 @@
 					"main/message/chat.html"
 				],
 				"priority": 0
+			},
+			"main/timeline/timeline.html": {
+				"resources": [],
+				"refer": [
+					"main/timeline/publish.html"
+				],
+				"priority": 0
 			}
 		},
 		"idle": {

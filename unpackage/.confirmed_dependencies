@@ -192,5 +192,10 @@
 			"main/message/chat.html"
 		],
 		"resources": []
+	},
+	"main/timeline/timeline.html": {
+		"refer": [
+			"main/timeline/publish.html"
+		]
 	}
 }
