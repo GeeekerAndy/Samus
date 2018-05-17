@@ -197,5 +197,10 @@
 		"refer": [
 			"main/timeline/publish.html"
 		]
+	},
+	"main/contacts/contacts.html": {
+		"refer": [
+			"main/contacts/chat.html"
+		]
 	}
 }

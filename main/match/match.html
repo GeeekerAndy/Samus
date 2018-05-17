@@ -1,48 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <title>Tinder-like Card Swipe Interaction</title>
+	<head>
+		<meta charset="UTF-8">
+		<title>Tinder-like Card Swipe Interaction</title>
+		<link rel="stylesheet" href="card.css">
+		<link rel="stylesheet" href="../../pubcss/bootstrap.min.css">
+		<link rel="stylesheet" href="../../pubcss/mui.min.css" />
+		<link rel="stylesheet" href="match.css" />
 
+	</head>
 
+	<body>
+		<div class="mui-content parent-style">
+			<div class="demo">
+				<div class="demo__content">
 
-  <link rel="stylesheet" href="card.css">
-  <link rel="stylesheet" href="../../pubcss/bootstrap.min.css">
-  <link rel="stylesheet" href="../../pubcss/mui.min.css" />
-  <link rel="stylesheet" href="match.css" />
+					<div class="demo__card-cont">
 
+						<!--<div class="card card-custom demo__card">
+							<img class="card-img-top" src="avatar.jpg" alt="Card img cap">
+							<div class="card-body">
+								<h1>滴，上车！</h1>
+								<h2 class="card-text" style="margin-top: 20px;">← 左滑嫌弃 | 右滑欢喜 → </h2>
+							</div>
+							<div class="demo__card__choice m--reject"></div>
+							<div class="demo__card__choice m--like"></div>
+							<div class="demo__card__drag"></div>
+						</div>-->
 
-</head>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../../pubjs/config.js"></script>
+		<script src='../../pubjs/jquery.min.js'></script>
+		<script src="../../pubjs/mui.min.js"></script>
+		<script src="match.js"></script>
 
-<body>
-  <div class="mui-content parent-style">
-    <div class="demo">
-      <div class="demo__content">
-
-        <div class="demo__card-cont">
-
-          <div class="card card-custom demo__card">
-            <img class="card-img-top" src="avatar.jpg" alt="Card img cap">
-            <div class="card-body">
-              <h1>滴，上车！</h1>
-              <h2 class="card-text" style="margin-top: 20px;">← 左滑嫌弃 | 右滑欢喜 → </h2>
-            </div>
-            <div class="demo__card__choice m--reject"></div>
-            <div class="demo__card__choice m--like"></div>
-            <div class="demo__card__drag"></div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src='../../pubjs/jquery.min.js'></script>
-  <script src="match.js"></script>
-  <script src="../../pubjs/config.js"></script>
-  <script src="../../pubjs/mui.min.js"></script>
-
-</body>
+	</body>
 
 </html>

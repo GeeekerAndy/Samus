@@ -62,37 +62,79 @@ function pulldownRefresh() {
 		// 	table.appendChild(li);
 
 		// }
-		var groupJson = {
-			"code": 0,
-			"msg": "success",
-			"data": [
-				"山大",
-				"北大",
-				"清华"
-			]
-		};
-		var contactJson = {
-			"code": 0,
-			"msg": "success",
-			"data": [{
-				"name": "夏雪1",
-				"group": "山大"
-			}, {
-				"name": "夏雪2",
-				"group": "山大"
-			}, {
-				"name": "夏雪3",
-				"group": "清华"
-			}, {
-				"name": "夏雪4",
-				"group": "北大"
-			}]
-		};
-		addContactGroup(groupJson);
-		addContactToAGroup(contactJson);
+		$.ajax({
+			url: getServerInfo().serverIp + getServerInfo().getContactGroup,
+			data: "",
+			type: 'post',
+			contentType: 'application/json',
+			cache: false,
+			dataType: 'json',
+			success: function(result) {
+				if(result["code"] == "0") {
+					addContactGroup(result);
+					updateContactList();
+				}
+			},
+			error: function(XMLHttpRequest, status, error) {
+				mui.toast("无法连接服务器");
+				console.log(XMLHttpRequest);
+				console.log(status);
+				console.log(error);
+			}
+		});
+		//		var groupJson = {
+		//			"code": 0,
+		//			"msg": "success",
+		//			"data": [
+		//				"山大",
+		//				"北大",
+		//				"清华"
+		//			]
+		//		};
+		//				var contactJson = {
+		//					"code": 0,
+		//					"msg": "success",
+		//					"data": [{
+		//						"name": "夏雪1",
+		//						"group": "山大"
+		//					}, {
+		//						"name": "夏雪2",
+		//						"group": "山大"
+		//					}, {
+		//						"name": "夏雪3",
+		//						"group": "清华"
+		//					}, {
+		//						"name": "夏雪4",
+		//						"group": "北大"
+		//					}]
+		//				};
+
 		mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
 		mui.toast('刷新成功');
 	}, 1000);
+}
+
+function updateContactList() {
+	$.ajax({
+		url: getServerInfo().serverIp + getServerInfo().getContactList,
+		data: "",
+		type: 'post',
+		contentType: 'application/json',
+		cache: false,
+		dataType: 'json',
+		success: function(result) {
+			console.log("联系人列表：" + JSON.stringify(result));
+			if(result["code"] == "0") {
+				addContactToAGroup(result);
+			}
+		},
+		error: function(XMLHttpRequest, status, error) {
+			mui.toast("无法连接服务器");
+			console.log(XMLHttpRequest);
+			console.log(status);
+			console.log(error);
+		}
+	});
 }
 
 function addContactGroup(groupJson) {
@@ -129,6 +171,14 @@ function addContactToAGroup(contactJson) {
 		var newNode = document.createElement('ul');
 		newNode.className = 'mui-table-view mui-table-view-chevron';
 		newNode.innerHTML = contactElement;
+
+		var contactId = contactJson.data[i]['contactId'];
+		var contactName = contactJson.data[i]['name'];
+		//传不进去参数
+		newNode.addEventListener('tap', function(contactId, contactName) {
+			console.log("联系人Id:" + contactId);
+			plus.webview.open('chat.html?chatId=' + contactId + '&chatName=' + encodeURI(contactName), 'new', {}, 'slide-in-right', 200);
+		});
 		contactGroup.appendChild(newNode);
 
 	}

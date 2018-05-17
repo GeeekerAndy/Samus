@@ -51,12 +51,12 @@
 		var record = [{
 				sender: 'zs',
 				type: 'text',
-				content: '消息记录1'
+				content: '你好'
 			},
 			{
 				sender: 'zs',
 				type: 'text',
-				content: '这里是消息记录2'
+				content: '我是聊天机器人软件小王子'
 			}
 		];
 		var ui = {

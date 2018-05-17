@@ -76,10 +76,11 @@ function addToUI(records) {
 		var nickname = plus.storage.getItem("nickname");
 		var createTime = records.data[i].createtime;
 		var content = records.data[i].content;
-		var picture = "data:image/png;base64," + records.data[i].picture;
+		var picture = records.data[i].picture;
+		console.log("动态图片为：" + picture);
 		var oneElement = '\
 			<div class="mui-card-header" style="padding: 5px 0 0 5px">\
-				<img class="mui-pull-left" src=' + avatar + ' style="width: 40px; height: 40px; border-radius: 50%" />\
+				<img class="mui-pull-left" src="data:image/png;base64,' + avatar + '" style="width: 40px; height: 40px; border-radius: 50%" />\
 			    <div class="mui-media-body" style="padding-left: 60px">' + nickname + '\
 			    	<p>' + createTime + '</p>\
 			    </div>\
@@ -88,8 +89,9 @@ function addToUI(records) {
 				<h5>' + content +'</h5>\
 			</div>\
 			<div class="mui-card-body">\
-					<img src=' + picture + ' style="max-width: 100%; height: auto;" />\
+					<img src="' + picture + '" style="max-width: 100%; height: auto;" />\
 			</div>';
+		console.log("添加的一个动态:" + oneElement);
 		var newNode = document.createElement('div');
 		newNode.className = 'card';
 		newNode.style = 'margin: 2px 0px;';

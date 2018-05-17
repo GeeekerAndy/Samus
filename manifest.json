@@ -379,6 +379,13 @@
 					"main/timeline/publish.html"
 				],
 				"priority": 0
+			},
+			"main/contacts/contacts.html": {
+				"resources": [],
+				"refer": [
+					"main/contacts/chat.html"
+				],
+				"priority": 0
 			}
 		},
 		"idle": {
